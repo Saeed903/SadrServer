@@ -1,0 +1,45 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "6f8ae11b9ca0b1b106e12702ca1c7e2c09ed47ad5e90c76d88a4f9a121d786e8e3b43efb6041c0ab29e9b2447d54b8295e999f7018d44d3aa4ab378a592638ca8ad59709c49f994927e9d9a9d06db2cffc6018553a96e57eeb3dde3ef5a12d3315deed0a44578719094b02dbb1a57393b3fac3468aa90353d745ac98961a7c296dc9ff1143ff65f471764eaf9fb4a749c5cd12aa33502e8d8a30fc7e673e890b759397facbc1807e2c815cdfbeb80d36263749f2a1fe72da1cff37b12b8b0a2f95a4d5fcedc8cf6564ef2f9effae36f309dd698288e084ccba5ec5b501a29a9cdb1ae68415d556105c1e98e456602565ae3c529eee191c2869e2309b10868a3e",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mssql": {
+    "client": "mssql",
+    "connection": {
+      "host": "vm-sql",
+      "user": "sa",
+      "password": "1478963",
+      "database": "SadrCrypto",
+      "options": {
+        "encrypt": false
+      }
+    }
+  }
+}
