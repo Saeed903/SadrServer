@@ -34,8 +34,8 @@
     "client": "mssql",
     "connection": {
       "host": "vm-sql",
-      "user": "sa",
-      "password": "1478963",
+      "user": "cryptouser",
+      "password": "zaq1@3edc",
       "database": "SadrCrypto",
       "options": {
         "encrypt": false
