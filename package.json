@@ -42,6 +42,7 @@
     "cors": "^2.8.4",
     "crypto-js": "^3.1.9-1",
     "easy-bitcoin-js": "^0.2.2",
+    "feathers-authentication-hooks": "^0.3.1",
     "feathers-knex": "^3.1.1",
     "helmet": "^3.12.1",
     "knex": "^0.14.6",
