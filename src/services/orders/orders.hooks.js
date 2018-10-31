@@ -9,7 +9,7 @@ module.exports = {
     create: [hooks.associateCurrentUser({as: 'ownerUser'})],
     update: [hooks.restrictToOwner({ ownerField: 'ownerId' })],
     patch: [hooks.restrictToOwner({ ownerField: 'ownerId' }) ],
-    remove: [hooks.restrictToOwner({ ownerField: 'ownerId' })]
+    remove: [hooks.restrictToOwner({ ownerField: 'ownerId' })] 
   },
 
   after: {
