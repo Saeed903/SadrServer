@@ -14,7 +14,7 @@ module.exports = function (app) {
         table.integer('advertiseId').notNullable();
         table.decimal('amount', 18, 4).notNullable();
         table.integer('buyerUserId').notNullable();
-        table.dateTime('createDate').notNullable();
+        table.dateTime('createDate').notNullable(); 
         table.string('orderTitle');
         table.integer('orderStateId').notNullable();
 
