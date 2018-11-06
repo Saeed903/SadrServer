@@ -1,4 +1,3 @@
-
 const hooks = require('feathers-authentication-hooks');
 
 module.exports = {
