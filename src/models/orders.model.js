@@ -10,7 +10,7 @@ module.exports = function (app) {
   db.schema.hasTable(tableName).then(exists => {
     if(!exists) {
       db.schema.createTable(tableName, table => {
-        table.increments('orderId');
+        table.increments('Id');
         table.integer('advertiseId').notNullable();
         table.decimal('amount', 18, 4).notNullable();
         table.integer('buyerUserId').notNullable();
@@ -18,7 +18,7 @@ module.exports = function (app) {
         table.string('orderTitle');
         table.integer('orderStateId').notNullable();
 
-        table.foreign('buyerUserId').references('Id').inTable('users');
+        table.foreign('ownerId').references('Id').inTable('users');
         table.foreign('advertiseId').references('advertiseId').inTable('Advertises');
         table.foreign('orderStateId').references('orderStateId').inTable('OrderStates');
       })
