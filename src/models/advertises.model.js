@@ -10,11 +10,11 @@ module.exports = function (app) {
   db.schema.hasTable(tableName).then(exists => {
     if(!exists) {
       db.schema.createTable(tableName, table => {
-        table.increments('advertiseId');
+        table.increments('Id');
         table.integer('tradeTypeId');
         table.integer('countryId');
-        table.string('currencyCode').notNullable();
-        table.float('margin');
+        table.string('currencyCode', 20).notNullable();
+        table.float('margin'); 
         table.string('priceEquation');
         table.decimal('minTransactionLimit', 18, 4);
         table.decimal('maxTransactionLimit', 18, 4);
@@ -23,7 +23,12 @@ module.exports = function (app) {
         table.boolean('identifiedPeopleOnly');
         table.boolean('smsVerification');
         table.boolean('trustedPeopleOnly');
-        table.integer('advertiserUserId').notNullable();
+        table.integer('ownerId').notNullable();
+
+        table.foreign('ownerId').references('Id').inTable('Users');
+        table.foreign('tradeTypeId').references('Id').inTable('TradeTypes');
+        table.foreign('countryId').references('Id').inTable('Countries');
+        table.foreign('currencyCode').references('currencyCode').inTable('Currencies');
 
       })
         .then(() => console.log(`Created ${tableName} table`))
