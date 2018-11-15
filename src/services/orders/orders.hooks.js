@@ -3,12 +3,12 @@ const hooks = require('feathers-authentication-hooks');
 module.exports = {
   before: {
     all: [],
-    find: [hooks.restrictToOwner({ ownerField: 'ownerId' })],
-    get: [hooks.restrictToOwner({ ownerField: 'ownerId' })],
-    create: [hooks.associateCurrentUser({as: 'ownerUser'})],
-    update: [hooks.restrictToOwner({ ownerField: 'ownerId' })],
-    patch: [hooks.restrictToOwner({ ownerField: 'ownerId' }) ],
-    remove: [hooks.restrictToOwner({ ownerField: 'ownerId' })] 
+    find: [hooks.restrictToOwner( { idField: 'Id', ownerField: 'ownerId' })],
+    get: [hooks.restrictToOwner({ idField: 'Id', ownerField: 'ownerId' })],
+    create: [hooks.associateCurrentUser({ idField: 'Id', as: 'ownerUser'})],
+    update: [hooks.restrictToOwner({ idField: 'Id', ownerField: 'ownerId' })],
+    patch: [hooks.restrictToOwner({ idField: 'Id', ownerField: 'ownerId' }) ],
+    remove: [hooks.restrictToOwner({ idField: 'Id', ownerField: 'ownerId' })] 
   },
 
   after: {
