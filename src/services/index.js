@@ -6,6 +6,8 @@ const paymentMethods = require('./payment-methods/payment-methods.service.js');
 const countries = require('./countries/countries.service.js');
 const orders = require('./orders/orders.service.js');
 const advertises = require('./advertises/advertises.service.js');
+const tradeTypes = require('./tradeTypes/tradeTypes.service.js');
+const cryptoCurrencies = require('./cryptoCurrencies/cryptoCurrencies.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(users);
@@ -15,4 +17,6 @@ module.exports = function (app) {
   app.configure(countries);
   app.configure(orders);
   app.configure(advertises);
+  app.configure(tradeTypes);
+  app.configure(cryptoCurrencies);
 };
