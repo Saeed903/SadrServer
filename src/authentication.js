@@ -14,7 +14,9 @@ module.exports = function (app) {
 
   // Set up authentication with the secret
   app.configure(authentication(config));
-  app.configure(jwt()
+  app.configure(jwt({
+    Verifier: JWTVerifier
+  })
   );
   app.configure(local({
       Verifier : LocalVerifier,

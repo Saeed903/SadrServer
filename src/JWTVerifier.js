@@ -2,20 +2,32 @@ const jwt = require('@feathersjs/authentication-jwt');
 
 class JWTVerifier extends jwt.Verifier {
   async verify(req, payload, done) {
-    // const knex = require('./knex');
+    
+    const opt = require('./../config/default.json');
+    
+    const knex = require('knex')(opt.mssql);
+    var user = {},
+        row;
+    knex.from('users').select("*").where({ id: payload.userId})
+        .then( (rows) => {
+          for (row of rows) {
+              user = row
+              delete user.password;
+              
+              payload.user = user;
 
-    // const user = knex.column('username', 'email', 'realName').select().from('users').where('id', payload.userId);
+              done(null, user, payload);
+              //console.log(`${row['id']} ${row['name']} ${row['price']}`);
+          }
+      }).catch((err) => { console.log( err); throw err })
+        .finally(() => {
+            knex.destroy();
+        });
 
-    // console.log('jwtuser',user);
-
-    // payload.user = user;
-
-    done(null, null, payload);
   }
 }
 
 module.exports = JWTVerifier;
 
-    // 
 
    
