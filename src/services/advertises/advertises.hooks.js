@@ -6,11 +6,11 @@ module.exports = {
   before: {
     all: [authenticate('jwt')],
     find: [],
-    get: [hooks.restrictToOwner({ idField: 'Id', ownerField: 'ownerId' })],
-    create: [hooks.associateCurrentUser({ idField: 'Id', as: 'ownerId'})],
-    update: [hooks.restrictToOwner({ idField: 'Id', ownerField: 'ownerId' })],
-    patch: [hooks.restrictToOwner({ idField: 'Id', ownerField: 'ownerId' })],
-    remove: [hooks.restrictToOwner({ idField: 'Id', ownerField: 'ownerId' })]
+    get: [hooks.restrictToOwner({ idField: 'id', ownerField: 'ownerId' })],
+    create: [hooks.associateCurrentUser({ idField: 'id', as: 'ownerId'})],
+    update: [hooks.restrictToOwner({ idField: 'id', ownerField: 'ownerId' })],
+    patch: [hooks.restrictToOwner({ idField: 'id', ownerField: 'ownerId' })],
+    remove: [hooks.restrictToOwner({ idField: 'id', ownerField: 'ownerId' })]
   },
 
   after: {
