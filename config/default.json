@@ -18,8 +18,8 @@
       "header": {
         "typ": "access"
       },
-      "audience": "https://yourdomain.com",
-      "subject": "anonymous",
+      "audience": "https://sadrsys.com",
+      "subject": "trader",
       "issuer": "feathers",
       "algorithm": "HS256",
       "expiresIn": "1d"
@@ -33,7 +33,7 @@
   "mssql": {
     "client": "mssql",
     "connection": {
-      "host": "vm-sql",
+      "host": "localhost",
       "user": "cryptouser",
       "password": "zaq1@3edc",
       "database": "SadrCrypto",
