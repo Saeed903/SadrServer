@@ -19,6 +19,7 @@ const usersPermissions = require('./users_permissions/users_permissions.service.
 const fraudulentUsers = require('./fraudulent-users/fraudulent-users.service.js');
 const dayOfWeeks = require('./day-of-weeks/day-of-weeks.service.js');
 const tradeOpeningHours = require('./trade-opening-hours/trade-opening-hours.service.js');
+const publishAdvertises = require('./publishAdvertises/publishAdvertises.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(users);
@@ -41,4 +42,5 @@ module.exports = function (app) {
   app.configure(fraudulentUsers);
   app.configure(dayOfWeeks);
   app.configure(tradeOpeningHours);
+  app.configure(publishAdvertises);
 };
