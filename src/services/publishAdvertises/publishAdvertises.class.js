@@ -27,9 +27,7 @@ class Service {
               delete itm.password;
               result.push({
                 id: adv['id'],
-                user: { username:itm['userName'],
-                  email: itm['email']
-                },
+                user: itm,
                 margin: adv['margin']
               });
             }
