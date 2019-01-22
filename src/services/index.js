@@ -20,6 +20,7 @@ const fraudulentUsers = require('./fraudulent-users/fraudulent-users.service.js'
 const dayOfWeeks = require('./day-of-weeks/day-of-weeks.service.js');
 const tradeOpeningHours = require('./trade-opening-hours/trade-opening-hours.service.js');
 const publishAdvertises = require('./publishAdvertises/publishAdvertises.service.js');
+const graphql = require('./graphql/graphql.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(users);
@@ -43,4 +44,5 @@ module.exports = function (app) {
   app.configure(dayOfWeeks);
   app.configure(tradeOpeningHours);
   app.configure(publishAdvertises);
+  app.configure(graphql);
 };
