@@ -33,7 +33,7 @@
   "mssql": {
     "client": "mssql",
     "connection": {
-      "host": "vm-sql",
+      "host": "Saeed-laptop",
       "user": "cryptouser",
       "password": "zaq1@3edc",
       "database": "SadrCrypto",
