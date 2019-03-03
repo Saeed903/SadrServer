@@ -48,6 +48,7 @@
     "compression": "^1.7.2",
     "cors": "^2.8.4",
     "crypto-js": "^3.1.9-1",
+    "dotenv": "^6.2.0",
     "easy-bitcoin-js": "^0.2.2",
     "express-session": "^1.15.6",
     "feathers-authentication-hooks": "^0.3.1",
