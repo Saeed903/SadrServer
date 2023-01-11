@@ -57,7 +57,7 @@
     "graphql-subscriptions": "^1.0.0",
     "graphql-tools": "^4.0.3",
     "helmet": "^3.12.1",
-    "knex": "^0.14.6",
+    "knex": "^2.4.0",
     "mssql": "^4.1.0",
     "nodemon": "^1.18.3",
     "serve-favicon": "^2.5.0",
